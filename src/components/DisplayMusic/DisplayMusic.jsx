@@ -7,8 +7,9 @@ const DisplayMusic = (props) => {
             <tr>
                 <th>Song Title</th>
                 <th>Artist</th>
-                <th>Genre</th>
+                <th>Album</th>
                 <th>Release Date</th>
+                <th>Genre</th>
             </tr>
             
             {props.music.map((song => 
@@ -16,6 +17,7 @@ const DisplayMusic = (props) => {
                 <td key={song.id}>{song.artist}</td>
                 <td key={song.id}>{song.album}</td>                
                 <td key={song.id}>{song.release_date}</td>
+                <td key={song.id}>{song.genre}</td>
 
                 </tr>
             ))}

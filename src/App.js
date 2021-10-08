@@ -55,6 +55,7 @@ class App extends Component {
         <h1>Songs</h1>
         <hr />
         <DisplayMusic music={this.state.song}/>
+        <br />
         <CreateSongForm createSong={this.createSong} />
 
       
