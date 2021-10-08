@@ -34,10 +34,20 @@ class App extends Component {
       tempSong.push(response.data);
     }
     catch (ex) {
-      console.log('Error in create song API', ex)
+      console.log('Error in create song API call', ex)
     }
   }
 
+  deleteSong = async () => {
+    try {
+      let response = await axios.delete('http://127.0.0.1:8000/library/');
+      let tempSong = this.state.song;
+      tempSong.delete(response.data); 
+    }
+    catch (ex) {
+      console.log('Error in delete song API call')
+    }
+  }
 
   render() { 
     return (
