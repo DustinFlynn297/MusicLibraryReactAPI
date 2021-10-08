@@ -1,6 +1,7 @@
 import React from 'react';
 import './DisplayMusic.css'
 
+
 const DisplayMusic = (props) => {
     return ( 
         <table>
@@ -10,6 +11,7 @@ const DisplayMusic = (props) => {
                 <th>Album</th>
                 <th>Release Date</th>
                 <th>Genre</th>
+                <th>Delete Song</th>
             </tr>
             
             {props.music.map((song => 
@@ -18,6 +20,7 @@ const DisplayMusic = (props) => {
                 <td key={song.id}>{song.album}</td>                
                 <td key={song.id}>{song.release_date}</td>
                 <td key={song.id}>{song.genre}</td>
+                <td key={song.id}><button delete={props.delete}>Delete Song </button></td>
 
                 </tr>
             ))}
