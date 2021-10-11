@@ -41,14 +41,17 @@ class App extends Component {
   deleteSong = async (song_id) => {
     debugger;
     try {
-      let response = await axios.delete('http://127.0.0.1:8000/library/' + song_id + '/').then(res=>{
-        console.log(res.data)
-      })
+      let response = await axios.delete('http://127.0.0.1:8000/library/' + song_id + '/');
       this.getAllSongs();
-
     }
     catch (ex) {
       console.log('Error in delete song API call')
+    }
+  }
+
+  filterMusic = async () => {
+    try {
+      let response = await axios.get
     }
   }
 
@@ -56,8 +59,7 @@ class App extends Component {
     return (
       <div>
         <div>
-        <h1>Music Library</h1>
-        <hr />
+        <h1 class="App-header">Music Library</h1>        
         <DisplayMusic music={this.state.song} delete={this.deleteSong}/>
         
         <br />
