@@ -29,7 +29,7 @@ class CreateSongForm extends Component {
                 <table class="center">
                     <tr>
                         <td>
-                        <label>Song Title:  </label>
+                        <label>Song Title: </label>
                         <input name='title' onChange={this.handleChange} value={this.state.title} />
                         </td>                        
                     </tr>
