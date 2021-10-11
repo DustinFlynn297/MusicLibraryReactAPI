@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import DisplayMusic from './components/DisplayMusic/DisplayMusic';
 import CreateSongForm from './components/CreateSongForm/CreateSongForm';
+import MusicFilter from './components/MusicFilter/MusicFilter';
 
 class App extends Component {
   constructor(props) {
@@ -49,23 +50,19 @@ class App extends Component {
     }
   }
 
-  filterMusic = async () => {
-    try {
-      let response = await axios.get
-    }
-  }
+ 
 
   render() { 
     return (
       <div>
         <div>
-        <h1 class="App-header">Music Library</h1>        
+        <h1 class="App-header">Music Library</h1>
+        <MusicFilter filterMusic={this.song} />        
         <DisplayMusic music={this.state.song} delete={this.deleteSong}/>
         
         <br />
         </div>
-        <div>
-        
+        <div>        
         <CreateSongForm createSong={this.createSong} />
         </div>    
       
