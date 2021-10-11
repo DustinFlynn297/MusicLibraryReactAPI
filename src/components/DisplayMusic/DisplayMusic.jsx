@@ -4,7 +4,7 @@ import './DisplayMusic.css'
 
 const DisplayMusic = (props) => {
     return ( 
-        <table>
+        <table class="center">
             <tr>
                 <th>Song Title</th>
                 <th>Artist</th>
@@ -20,7 +20,7 @@ const DisplayMusic = (props) => {
                 <td key={song.id}>{song.album}</td>                
                 <td key={song.id}>{song.release_date}</td>
                 <td key={song.id}>{song.genre}</td>
-                <td key={song.id}><button delete={props.delete}>Delete Song </button></td>
+                <td key={song.id}><button onClick={() => props.delete(song.id)}>Delete Song</button></td>
 
                 </tr>
             ))}

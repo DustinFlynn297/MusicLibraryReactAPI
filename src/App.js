@@ -3,7 +3,6 @@ import './App.css';
 import axios from 'axios';
 import DisplayMusic from './components/DisplayMusic/DisplayMusic';
 import CreateSongForm from './components/CreateSongForm/CreateSongForm';
-import DeleteSong from './components/DeleteSong/DeleteSong';
 
 class App extends Component {
   constructor(props) {
@@ -40,8 +39,13 @@ class App extends Component {
   }
 
   deleteSong = async (song_id) => {
+    debugger;
     try {
-      let response = await axios.delete('http://127.0.0.1:8000/library/' + song_id);
+      let response = await axios.delete('http://127.0.0.1:8000/library/' + song_id + '/').then(res=>{
+        console.log(res.data)
+      })
+      this.getAllSongs();
+
     }
     catch (ex) {
       console.log('Error in delete song API call')
@@ -52,10 +56,10 @@ class App extends Component {
     return (
       <div>
         <div>
-        <h1>Songs</h1>
+        <h1>Music Library</h1>
         <hr />
         <DisplayMusic music={this.state.song} delete={this.deleteSong}/>
-        <DeleteSong delete={this.deleteSong}/>
+        
         <br />
         </div>
         <div>
