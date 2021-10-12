@@ -54,19 +54,12 @@ class App extends Component {
 
   render() { 
     return (
-      <div>
-        <div>
-        <h1 class="App-header">Music Library</h1>
-        <MusicFilter filterMusic={this.song} />    
+      <div>        
+        <h1 class="App-header">Music Library</h1>         
         <br/>    
-        <DisplayMusic music={this.state.song} delete={this.deleteSong}/>
-        
+        <DisplayMusic music={this.state.song} delete={this.deleteSong}/>        
         <br />
-        </div>
-        <div>        
-        <CreateSongForm createSong={this.createSong} />
-        </div>    
-      
+        <CreateSongForm createSong={this.createSong} />      
       </div> 
      );
   }
