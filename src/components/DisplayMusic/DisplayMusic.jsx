@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from "react";
 import './DisplayMusic.css'
+import UpdateSong from '../UpdateSong/UpdateSong';
 
 
 const DisplayMusic = (props) => {
     const [searchTerm, setSearchTerm] = useState("")
     return ( 
-        <div className="container">
+        <div class="table-responsive">
             <input 
                 type="text" 
                 placeholder="Search.." 
@@ -16,8 +17,8 @@ const DisplayMusic = (props) => {
                     setSearchTerm(e.target.value)
                 }}
                 />
-            <table className="table table-bordered">
-                <thead className="thead-dark">
+            <table className="table table-dark">
+                <thead>
                     <tr>
                         <th>Song Title</th>
                         <th>Artist</th>
@@ -25,6 +26,7 @@ const DisplayMusic = (props) => {
                         <th>Release Date</th>
                         <th>Genre</th>
                         <th>Delete Song</th>
+                        <th>Edit Song</th>
                     </tr>
                 </thead>
                 {props.music.filter(val=> {
@@ -41,12 +43,14 @@ const DisplayMusic = (props) => {
                         return val
                     }
                 }).map((song => 
-                    <tr><td key={song.id}>{song.title}</td>
-                    <td key={song.id}>{song.artist}</td>
-                    <td key={song.id}>{song.album}</td>                
-                    <td key={song.id}>{song.release_date}</td>
-                    <td key={song.id}>{song.genre}</td>
-                    <td key={song.id}><button onClick={() => props.delete(song.id)}>Delete Song</button></td>
+                    <tr key={song.id}>
+                    <td >{song.title}</td>
+                    <td >{song.artist}</td>
+                    <td >{song.album}</td>                
+                    <td >{song.release_date}</td>
+                    <td >{song.genre}</td>
+                    <td><button className='btn btn-md btn-outline-dark bg-light' onClick={() => props.delete(song.id)}>Delete Song</button></td>
+                    <td><UpdateSong song={song} updateSong={song.updateSong} /></td>
 
                     </tr>
                 ))}

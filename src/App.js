@@ -3,7 +3,6 @@ import './App.css';
 import axios from 'axios';
 import DisplayMusic from './components/DisplayMusic/DisplayMusic';
 import CreateSongForm from './components/CreateSongForm/CreateSongForm';
-import MusicFilter from './components/MusicFilter/MusicFilter';
 
 class App extends Component {
   constructor(props) {
@@ -39,10 +38,21 @@ class App extends Component {
     }
   }
 
+  updateSong = async (id, song) => {
+    const path = 'http://127.0.0.1:8000/library/' + id + '/'
+    await axios.put(path, song)
+    .then(res => {
+      this.getAllSongs();
+      })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
   deleteSong = async (song_id) => {
     debugger;
     try {
-      let response = await axios.delete('http://127.0.0.1:8000/library/' + song_id + '/');
+      await axios.delete('http://127.0.0.1:8000/library/' + song_id + '/');
       this.getAllSongs();
     }
     catch (ex) {
@@ -54,12 +64,23 @@ class App extends Component {
 
   render() { 
     return (
-      <div>        
-        <h1 class="App-header">Music Library</h1>         
-        <br/>    
-        <DisplayMusic music={this.state.song} delete={this.deleteSong}/>        
-        <br />
-        <CreateSongForm createSong={this.createSong} />      
+      <div className="container-fluid mx-auto app-bg">
+        <div className="row">        
+        <h1 class="h1 text-center bg-black">Music Library</h1>        
+        </div>
+        <div className='row'>
+          <div className='col-1'></div>
+          <div className='col-10'>          
+          <DisplayMusic music={this.state.song} delete={this.deleteSong} updateSong={this.updateSong}/>        
+        </div>
+        <div className='col-1'></div>
+        </div>
+        <div className='row'>
+          <div className='col-1'></div>
+          <div className='col-10'></div>
+          <CreateSongForm createSong={this.createSong} />
+          </div>
+          <div className='col-1'></div>              
       </div> 
      );
   }

@@ -1,33 +1,14 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app-bg {
+  background-color: #233a5e;
+  color: #d2dff5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: auto;
+  width: auto;
 }
-
-
-
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body {
-  background-color: #1407c796;
-}
-
-button {
-  background-color: rgba(128, 128, 128, 0.774);
-  color: rgba(255, 255, 255, 0.726);
-
-}
-
-label {
-  font-family: 'Courier New', Courier, monospace;
-  font-size-adjust: inherit;
+html {
+  background-color: #233a5e;
+  color: #d2dff5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: auto;
+  width: auto;
 }

@@ -1,0 +1,23 @@
+.my_table tr {
+    display:flex;
+  }
+  
+  .my_table td {
+    margin: 2px;
+    height: 60px;
+    display:flex;
+    flex-grow:1;
+    /* centering the button */
+    align-items:center;
+    justify-content:center;
+  }
+  
+  
+  .inner_button {
+    display:flex;
+    /* centering the text inside the button */
+    align-items:center;
+    justify-content:center;
+  
+    /* plus the other properties */
+  }

@@ -1,0 +1,29 @@
+.modal-font{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#modal-header-styling{
+    background-color: #233a5e;
+    color: #d1cbcbc9;
+
+}
+
+#modal-body-styling{
+    background-color: #575e68;
+    color: #a5a0a0c9;
+
+}
+
+#modal-footer-styling{
+    background-color: #575e68;
+    color: #a5a0a0c9;
+
+}
+
+
+#submit-button{
+    background-color: #233a5e;
+    color: #d1cbcbc9;
+    font-size: 16pt;
+    font-style: inherit;
+}
