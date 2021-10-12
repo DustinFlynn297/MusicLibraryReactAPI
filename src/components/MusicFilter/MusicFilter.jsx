@@ -8,16 +8,16 @@ class MusicFilter extends Component {
          }
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event, search) => {
+        event.preventDefault()
         this.props.filterMusic(this.state);
-        this.state.songs.includes();
-        this.props.filterMusic(this.state)
+        this.state.songs.includes(search);
     }
     render() { 
         return ( 
             <form align="center" onSubmit={this.handleSubmit}>
-                <label>Song Filter: </label>
-                <input class="search" type="text" />
+                <label>Music Filter: </label>
+                <input name="search" class="search" type="text" />
             </form>
          );
     }

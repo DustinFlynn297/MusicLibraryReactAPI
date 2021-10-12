@@ -57,7 +57,8 @@ class App extends Component {
       <div>
         <div>
         <h1 class="App-header">Music Library</h1>
-        <MusicFilter filterMusic={this.song} />        
+        <MusicFilter filterMusic={this.song} />    
+        <br/>    
         <DisplayMusic music={this.state.song} delete={this.deleteSong}/>
         
         <br />
